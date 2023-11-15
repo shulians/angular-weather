@@ -6,10 +6,11 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./weather-image.component.css'],
 })
 export class WeatherImageComponent {
-  @Input() selectedClimate!: number;
-  @Input() selectedWeather!: string;
+  @Input() selectedWeather!: any;
 
   getImagePath(): string {
-    return `assets/images/${this.selectedWeather}-${this.selectedClimate}.png`;
+    let dayNightCycle: string = Boolean(this.selectedWeather['isDayTime']) ? 'day' : 'night';
+    let wheater: string = String(this.selectedWeather['weatherText']);
+    return `assets/images/weather/${dayNightCycle}/${wheater}.png`;
   }
 }

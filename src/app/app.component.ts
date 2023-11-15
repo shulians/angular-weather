@@ -29,6 +29,16 @@ export class AppComponent {
   }
 
   getData() {
+    // Json de prueba 
+    /*this.response = {
+      localizedName: 'Luis Guillon',
+      city: 'Buenos Aires',
+      country: 'Argentina',
+      weatherInMetric: '25°C',
+      isDayTime: true,
+      weatherText: 'Partly sunny'
+    };*/ 
+    
     this.wheaterService.getData(this.latitude, this.longitude).subscribe(
       (response: any) => {
         this.response = response;

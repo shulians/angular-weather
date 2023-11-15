@@ -1,24 +1,10 @@
 <app-container-layout>
-  <div>
-    <div>
-      <label>Clima:</label>
-      <select [(ngModel)]="climate">
-        <option *ngFor="let item of climates">{{ item }}</option>
-      </select>
+  <div class="container">
+    <div class="row">
+      <app-weather-image [selectedWeather]="response"/>
     </div>
-    
-    <div>
-      <label>Tiempo:</label>
-      <select [(ngModel)]="weather">
-        <option *ngFor="let item of weathers">{{ item }}</option>
-      </select>
-    </div>
-    
-    <app-weather-image [selectedClimate]="climate" [selectedWeather]="weather"/>
-
-    <div style="text-align: center;">
-      <h1>{{latAndLong}}</h1>
-      <h1>{{ response | json }}</h1>
+    <div class="row">
+      <div class="col"></div>
     </div>
   </div>
 </app-container-layout>
