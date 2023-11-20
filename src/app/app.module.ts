@@ -8,10 +8,12 @@ import { ContainerLayoutComponent } from './components/container-layout/containe
 
 import { HttpClientModule } from '@angular/common/http';
 import { WheaterService } from './services/weather-service/wheater.service';
+import { AppRoutingModule } from './app-routing.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [AppComponent, WeatherImageComponent, MenuComponent],
-  imports: [FormsModule,BrowserModule,ContainerLayoutComponent,HttpClientModule],
+  imports: [FormsModule,BrowserModule,ContainerLayoutComponent,HttpClientModule, AppRoutingModule,RouterModule],
   providers: [WheaterService],
   bootstrap: [AppComponent]
 })
