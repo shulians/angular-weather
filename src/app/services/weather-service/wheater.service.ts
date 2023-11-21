@@ -15,7 +15,13 @@ export class WheaterService {
 
     getData(lat: string, lng: string ): Observable<any> {
       const url = 'http://localhost:8085/apibff/weather';
-console.log("hola mundo");
+
       return this.http.post<any>(url, { coordinates: {latitude: lat, longitude: lng}  });
+    }
+
+    getHistory(): Observable<any> {
+      const url = 'http://localhost:8085/apibff/weather/history';
+
+      return this.http.get<any>(url);
     }
 }

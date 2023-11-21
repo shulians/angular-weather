@@ -10,10 +10,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { WheaterService } from './services/weather-service/wheater.service';
 import { AppRoutingModule } from './app-routing.module';
 import { RouterModule } from '@angular/router';
+import { HistoryModule } from './history/history.module';
 
 @NgModule({
   declarations: [AppComponent, WeatherImageComponent, MenuComponent],
-  imports: [FormsModule,BrowserModule,ContainerLayoutComponent,HttpClientModule, AppRoutingModule,RouterModule],
+  imports: [FormsModule,BrowserModule,ContainerLayoutComponent,HttpClientModule, AppRoutingModule,RouterModule,HistoryModule],
   providers: [WheaterService],
   bootstrap: [AppComponent]
 })

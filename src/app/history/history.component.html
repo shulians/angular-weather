@@ -1,30 +1,29 @@
 <div class="container text-center border rounded border-info p-4" style="margin-top: 20px;">
-    <div class="row">
-        <h5>Hitory</h5>
-    </div>
-</div>
-<div class="container text-center border rounded border-info p-4" style="margin-top: 20px;">
-    <div class="row">
-      <div class="col">
-        <h6>DateTime</h6>
-      </div>
-      <div class="col">
-        <h6>localizedName</h6>
-      </div>
-      <div class="col">
-        <h6>country</h6>
-      </div>
-      <div class="col">
-        <h6>weatherInMetric</h6>
-      </div>
-      <div class="col">
-        <h6>weatherInImperial</h6>
-      </div>
-      <div class="col">
-        <h6>weatherText</h6>
-      </div>
-      <div class="col">
-        <h6>weatherIcon</h6>
-      </div>
-    </div>
+  <div class="row">
+    <h5>History</h5>
   </div>
+</div>
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>DateTime</th>
+        <th>Country</th>
+        <th>City</th>
+        <th>LocalizedName</th>
+        <th>WeatherInMetric</th>
+        <th>WheaterIcon</th>
+      </tr>
+    </thead>
+    <tbody *ngIf="items && items.weathers && items.weathers.length > 0">
+      <tr *ngFor="let item of items.weathers">
+        <td>{{ item.dateTime }}</td>
+        <td>{{ item.country }}</td>
+        <td>{{ item.city }}</td>
+        <td>{{ item.localizedName }}</td>
+        <td>{{ item.weatherInMetric }}</td>
+        <td><img [src]="getImagePath(item.isDayTime,item.weatherText)" alt="Imagen del tiempo"></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
